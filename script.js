@@ -1,5 +1,11 @@
 // SKAPA ARRAY MED ANVÄNDARUPPGIFTER
 
+let userArr = ["janne", "gabrielle"];
+let passArr = ["test", "mittlosen"];
+
+console.log(userArr[1], passArr[1]);
+console.log(userArr[0], passArr[0]);
+
 // SÄTT EVENTLISTENER PÅ LOGGA IN-KNAPP
 
 // CHECKA OM IFYLLDA UPPGIFTER STÄMMER OCH UPPDATERA MENY + INNEHÅLL
