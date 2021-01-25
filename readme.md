@@ -8,15 +8,15 @@ Du har fått i uppgift att utveckla en inloggningssida till ett företag. Sidan 
 
 * Menyn skall alltid visas och ändras dynamiskt för att visa rätt innehåll:
 
-- En valfri logotyp eller en h1'a.
-- Om besökaren ej är inloggad så skall ett inloggningsformulär visas.
-- Är besökaren inloggad så skall istället en logga-ut knapp visas.
+    1. En valfri logotyp eller en h1'a.
+    2. Om besökaren ej är inloggad så skall ett inloggningsformulär visas.
+    3. Är besökaren inloggad så skall istället en logga-ut knapp visas.
 
 * Innehållsvyn skall dynamiskt växla mellan tre olika lägen:
 
-- Välkomstsida för ej inloggade.
-- Felmeddelande vid felaktig inlogging.
-- Välkomstsida för inloggad besökare.
+    1. Välkomstsida för ej inloggade.
+    2. Felmeddelande vid felaktig inlogging.
+    3. Välkomstsida för inloggad besökare.
 
 Ditt projekt får enbart innehålla 1 st html sida, index.html alla vyer skall hanteras i denna.
 
