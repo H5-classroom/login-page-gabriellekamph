@@ -31,6 +31,7 @@ function validateInput() {
 
     if (valid) {
         console.log("HURRAAA");
+        
     }
     else {
         console.log("NOOOO");
@@ -39,14 +40,13 @@ function validateInput() {
 
 }
 
-// UPPDATERA MENY + INNEHÅLL BEROENDE PÅ OM INLOGG STÄMMER
+// MENY + INNEHÅLLSSIDA FÖR EJ INLOGGAT LÄGE
 
-//----- Meny 1 (ej inloggad) - visa inloggningsformulär
+document.getElementById("content").innerHTML = "<p> Välkommen till en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter uppe i högra hörnet för att logga in. </p>";
 
-//----- Meny 2 (inloggad) - visa knapp för att logga ut
+// FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
 
-//----- Innehållsvy 1 (ej inloggad) - välkomstsida för ej inloggade
 
-//----- Innehållsvy 2 (inloggad) - välkomstsida för inloggad besökare
+// MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
 
-//----- Innehållsvy 3 (felaktig inloggning) - visa felmeddelande
+
