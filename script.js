@@ -1,9 +1,18 @@
-// SKAPA ARRAY MED ANVÄNDARUPPGIFTER
+// ARRAY MED SPARADE INLOGGNINGSUPPGIFTER
 
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
 
-// SÄTT EVENTLISTENER PÅ LOGGA IN-KNAPP
+// SPARA ANGIVNA INLOGGNINGSUPPGIFTERNA I LOCAL STORAGE
+
+document.getElementById("loginBtn").addEventListener("click", storeIput);
+
+function storeIput() {
+    localStorage.setItem("username", userName.value);
+    localStorage.setItem("password", passW.value);
+}
+
+// KONTROLLERA OM ANGIVNA INLOGGNINGSUPPGIFTER STÄMMER
 
 document.getElementById("loginBtn").addEventListener("click", validateInput);
 
