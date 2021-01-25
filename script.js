@@ -1,11 +1,7 @@
-// ARRAY MED SPARADE INLOGGNINGSUPPGIFTER
+// ARRAYS MED SPARADE INLOGGNINGSUPPGIFTER
 
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
-
-// SPARA ANGIVNA INLOGGNINGSUPPGIFTERNA I LOCAL STORAGE
-
-
 
 // MENY + INNEHÅLLSSIDA FÖR EJ INLOGGAT LÄGE
 
@@ -33,16 +29,17 @@ function validateInput() {
     // MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
 
     if (valid) {    
-        console.log("HURRAAA");
+        // console.log("HURRAAA");
 
         document.getElementById("content").innerHTML = "<p> Hej " + userName + "! Nu är du inloggad. </p>";
-
+        
+        document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
     }
 
     // FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
 
     else {
-        console.log("NOOOO");
+        // console.log("NOOOO");
 
         document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
 
