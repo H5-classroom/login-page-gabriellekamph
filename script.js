@@ -3,12 +3,34 @@
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
 
-console.log(userArr[1], passArr[1]);
-console.log(userArr[0], passArr[0]);
-
 // SÄTT EVENTLISTENER PÅ LOGGA IN-KNAPP
 
-// CHECKA OM IFYLLDA UPPGIFTER STÄMMER OCH UPPDATERA MENY + INNEHÅLL
+document.getElementById("loginBtn").addEventListener("click", validateInput);
+
+function validateInput() {
+
+    let userName = document.getElementById("userName").value;
+    let passW = document.getElementById("passW").value;
+    let valid = false;
+
+    for (let i=0; i <userArr.length; i++) {
+        if ((userName == userArr[i]) && (passW == passArr[i])) {
+            valid = true;
+            break;
+        }
+    }
+
+    if (valid) {
+        console.log("HURRAAA");
+    }
+    else {
+        console.log("NOOOO");
+
+    }
+
+}
+
+// UPPDATERA MENY + INNEHÅLL BEROENDE PÅ OM INLOGG STÄMMER
 
 //----- Meny 1 (ej inloggad) - visa inloggningsformulär
 
