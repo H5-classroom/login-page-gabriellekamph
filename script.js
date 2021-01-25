@@ -5,12 +5,11 @@ let passArr = ["test", "mittlosen"];
 
 // SPARA ANGIVNA INLOGGNINGSUPPGIFTERNA I LOCAL STORAGE
 
-document.getElementById("loginBtn").addEventListener("click", storeIput);
 
-function storeIput() {
-    localStorage.setItem("username", userName.value);
-    localStorage.setItem("password", passW.value);
-}
+
+// MENY + INNEHÅLLSSIDA FÖR EJ INLOGGAT LÄGE
+
+document.getElementById("content").innerHTML = "<p> Välkommen till en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter uppe i högra hörnet för att logga in. </p>";
 
 // KONTROLLERA OM ANGIVNA INLOGGNINGSUPPGIFTER STÄMMER
 
@@ -24,29 +23,32 @@ function validateInput() {
 
     for (let i=0; i <userArr.length; i++) {
         if ((userName == userArr[i]) && (passW == passArr[i])) {
+            localStorage.setItem("username", userArr[i]);
+            localStorage.setItem("password", passArr[i]);
             valid = true;
             break;
         }
     }
 
-    if (valid) {
+    // MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
+
+    if (valid) {    
         console.log("HURRAAA");
-        
+
+        document.getElementById("content").innerHTML = "<p> Hej " + userName + "! Nu är du inloggad. </p>";
+
     }
+
+    // FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
+
     else {
         console.log("NOOOO");
+
+        document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
 
     }
 
 }
 
-// MENY + INNEHÅLLSSIDA FÖR EJ INLOGGAT LÄGE
-
-document.getElementById("content").innerHTML = "<p> Välkommen till en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter uppe i högra hörnet för att logga in. </p>";
-
-// FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
-
-
-// MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
 
 
