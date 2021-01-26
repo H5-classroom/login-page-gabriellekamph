@@ -3,9 +3,13 @@
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
 
-// MENY + INNEHÅLLSSIDA FÖR EJ INLOGGAT LÄGE
+// MENY + INNEHÅLL FÖR STARTSIDA (EJ INLOGGAT LÄGE)
 
-document.getElementById("content").innerHTML = "<p> Välkommen till en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter uppe i högra hörnet för att logga in. </p>";
+let startpageContent = "<p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
+let loginNav = document.getElementById("topnav");
+
+document.getElementById("h2").innerHTML = "Välkommen";
+document.getElementById("content").insertAdjacentHTML("beforeend", startpageContent);
 
 // KONTROLLERA OM ANGIVNA INLOGGNINGSUPPGIFTER STÄMMER
 
@@ -26,23 +30,33 @@ function validateInput() {
         }
     }
 
-    // MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
+    // UPPDATERA MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
 
     if (valid) {    
         // console.log("HURRAAA");
 
-        document.getElementById("content").innerHTML = "<p> Hej " + userName + "! Nu är du inloggad. </p>";
-        
-        document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
+        document.getElementById("content").innerHTML = "<h2>Snyggt " + userName + "!</h2> <p>Nu är du inloggad. </p>";
+
+    // LÄGG TILL LOGGA UT-KNAPP OCH SKICKA TILLBAKA TILL STARTSIDA VID KLICK
+
+        let logoutNav = document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
+
+        document.getElementById("topnav").innerHTML = logoutNav;
+        document.getElementById("logoutBtn").addEventListener("click", logout);
+
+        function logout() {
+            // localStorage.clear();  ----> Ska localStorage tömmas vid utlogg?
+            document.getElementById("content").innerHTML = startpageContent;
+            document.getElementById("topnav").innerHTML = "Visa inloggningsformulär igen";   
+            console.log(loginNav);       
+        }
     }
 
-    // FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
+    // VISA FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
 
     else {
         // console.log("NOOOO");
-
         document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
-
     }
 
 }
