@@ -3,60 +3,65 @@
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
 
-// MENY + INNEHÅLL FÖR STARTSIDA (EJ INLOGGAT LÄGE)
+let username = document.getElementById("username").value;
+let passW = document.getElementById("passW").value;
 
-let startpageContent = "<p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
-let loginNav = document.getElementById("topnav");
+// KOLLA OM BESÖKAREN FINNS I LOCAL STORAGE
 
-document.getElementById("content").insertAdjacentHTML("beforeend", startpageContent);
+if (localStorage.getItem('username') !== null) { 
+    console.log("Användaren finns sparad");
+    loggedIn();
 
-// KONTROLLERA OM ANGIVNA INLOGGNINGSUPPGIFTER STÄMMER
+} else {
+    console.log("Nope, nix, nej");
+    welcomePage();
+}
 
-document.getElementById("loginBtn").addEventListener("click", validateInput);
+// VÄLKOMSTSIDA (EJ INLOGGAD)
 
-function validateInput() {
+function welcomePage() {
 
-    let username = document.getElementById("username").value;
-    let passW = document.getElementById("passW").value;
-    let valid = false;
+    let startpageContent = "<p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
+    let loginNav = document.getElementById("topnav");
 
-    for (let i=0; i <userArr.length; i++) {
-        if ((username == userArr[i]) && (passW == passArr[i])) {
-            localStorage.setItem("username", userArr[i]);
-            valid = true;
-            break;
+    document.getElementById("content").insertAdjacentHTML("beforeend", startpageContent);
+
+    document.getElementById("loginBtn").addEventListener("click", validateInput);
+
+// VALIDERA ANGIVNA INLOGGNINGSUPPGIFTER
+
+    function validateInput() {
+        for (let i=0; i <userArr.length; i++) {
+            if ((username == userArr[i]) && (passW == passArr[i])) {
+                localStorage.setItem("username", userArr[i]);
+                valid = true;
+                loggedIn();
+                }
+        
+            else {
+                errorMessage();
+            }
         }
-    }
-
-    // UPPDATERA MENY + INNEHÅLLSSIDA FÖR INLOGGAT LÄGE
-
-    if (valid) {    
-        // console.log("HURRAAA");
-
-        document.getElementById("content").innerHTML = "<h2>Snyggt " + username + "!</h2> <p>Nu är du inloggad.</p>";
-
-    // LÄGG TILL LOGGA UT-KNAPP OCH SKICKA TILLBAKA TILL STARTSIDA VID KLICK
-
-        let logoutNav = document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
-
-        document.getElementById("topnav").innerHTML = logoutNav;
-        document.getElementById("logoutBtn").addEventListener("click", logout);
-
-        function logout() {
-            document.getElementById("content").innerHTML = "<h2>Välkommen</h2>" + startpageContent;
-            document.getElementById("topnav").innerHTML = loginNav;   
-            console.log(loginNav);       
-        }
-    }
-
-    // VISA FELMEDDELANDE VID FELAKTIGA INLOGGNINGSUPPGIFTER
-
-    else {
-        // console.log("NOOOO");
-        document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
     }
 
 }
+
+// STARTSIDA FÖR INLOGGAT LÄGE
+
+function loggedIn() {
+
+    document.getElementById("content").innerHTML = "<h2>Snyggt " + username + "!</h2> <p>Nu är du inloggad.</p>";
+
+}
+
+// FELMEDDELANDE VID FELAKTIGT ANGIVNA INLOGGNINGSUPPGIFTER
+
+function errorMessage() {
+
+    document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
+
+}
+
 
 
 
