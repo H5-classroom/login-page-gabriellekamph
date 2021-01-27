@@ -1,3 +1,11 @@
+*** Användarnamn och lösenord för testning: ***
+
+*username:*     *password:*
+janne           test
+knatte          knattepass
+fnatte          fnattepass
+tjatte          tjattepass
+
 *** Uppgiftsbeskrivning: Inloggningssida ***
 
 Du har fått i uppgift att utveckla en inloggningssida till ett företag. Sidan skall fungera som en proof-of-concept och har inte krav på säkerhet, utan till uppgiften kan du arbeta med användarnamn och lösenord i klartext. Dvs du kan hantera inloggningsuppgifter som statiska variabler eller i en array.

@@ -1,7 +1,7 @@
 // ARRAYS MED SPARADE INLOGGNINGSUPPGIFTER
 
-let userArr = ["janne", "gabrielle"];
-let passArr = ["test", "mittlosen"];
+let userArr = ["janne", "knatte", "fnatte", "tjatte"];
+let passArr = ["test", "knattepass", "fnattepass", "tjattepass"];
 
 // KOLLA OM BESÖKAREN FINNS I LOCAL STORAGE
 
