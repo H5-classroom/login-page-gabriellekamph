@@ -3,8 +3,6 @@
 let userArr = ["janne", "gabrielle"];
 let passArr = ["test", "mittlosen"];
 
-
-
 // KOLLA OM BESÖKAREN FINNS I LOCAL STORAGE
 
 if (localStorage.getItem('username') !== null) { 
@@ -20,29 +18,30 @@ if (localStorage.getItem('username') !== null) {
 
 function welcomePage() {
 
-    document.getElementById("content").innerHTML = "<p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
-    let loginNav = document.getElementById("topnav");
-    
-
-    document.getElementById("loginBtn").addEventListener("click", validateInput);
-}
+    document.getElementById("content").innerHTML = "<h2>Välkommen</h2> <p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
+    document.getElementById("topnav");
 
 // VALIDERA ANGIVNA INLOGGNINGSUPPGIFTER
-
-function validateInput() {
-
-    let username = document.getElementById("username").value;
-    let passW = document.getElementById("passW").value;
-
-    for (let i=0; i <userArr.length; i++) {
-        if ((username == userArr[i]) && (passW == passArr[i])) {
-            localStorage.setItem("username", userArr[i]);
-            console.log("yay");
-            loggedIn();
-            }
     
-        else {
-            errorMessage();
+    document.getElementById("loginBtn").addEventListener("click", validateInput);
+
+    function validateInput() {
+
+        let username = document.getElementById("username").value;
+        let passW = document.getElementById("passW").value;
+    
+        for (let i=0; i <userArr.length; i++) {
+            if ((username == userArr[i]) && (passW == passArr[i])) {
+                localStorage.setItem("username", userArr[i]);
+                console.log("yay");
+                loggedIn();
+                }
+        
+// FELMEDDELANDE VID FELAKTIGT ANGIVNA INLOGGNINGSUPPGIFTER
+
+            else {
+                document.getElementById("content").innerHTML = "<h2>Oops!</h2> <p>Nu blev det lite fel. Försök igen! </p>";
+            }
         }
     }
 }
@@ -54,16 +53,12 @@ function loggedIn() {
     document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
     document.getElementById("content").innerHTML = "<h2>Snyggt " + localStorage.getItem('username') + "!</h2> <p>Nu är du inloggad.</p>";
 
-    document.getElementById("logoutBtn").addEventListener("click", welcomePage);
+    document.getElementById("logoutBtn").addEventListener("click", logout);
 
-}
-
-// FELMEDDELANDE VID FELAKTIGT ANGIVNA INLOGGNINGSUPPGIFTER
-
-function errorMessage() {
-
-    document.getElementById("content").innerHTML = "<p> Oops! <br /> Nu blev det lite fel. Försök igen! </p>";
-
+    function logout() {
+        localStorage.clear();
+        welcomePage();
+    }
 }
 
 
