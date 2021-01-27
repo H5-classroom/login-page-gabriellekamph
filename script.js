@@ -26,6 +26,16 @@ function welcomePage() {
     
     document.getElementById("content").innerHTML = "<h2>Hej! &#128075;</h2> <p>Fyll i dina användaruppgifter ovan för att logga in. </p>";
 
+// L0GGA IN MED ENTER-TRYCKNING
+
+let passW = document.getElementById("passW");
+passW.addEventListener("keyup", function(event) {
+   if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("loginBtn").click();
+   }
+});
+
 // VALIDERA ANGIVNA INLOGGNINGSUPPGIFTER
     
     document.getElementById("loginBtn").addEventListener("click", validateInput);
