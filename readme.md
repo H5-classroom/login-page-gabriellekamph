@@ -1,10 +1,16 @@
 *** Användarnamn och lösenord för testning: ***
 
-*username:*     *password:*
-janne           test
-knatte          knattepass
-fnatte          fnattepass
-tjatte          tjattepass
+username: janne
+password: test
+
+username: knatte
+password: knattepass
+
+username: fnatte
+password: fnattepass
+
+username: tjatte
+password: tjattepass
 
 *** Uppgiftsbeskrivning: Inloggningssida ***
 
