@@ -16,15 +16,15 @@ if (localStorage.getItem('username') !== null) {
 
 function welcomePage() {
     
-    document.getElementById("topnav").innerHTML = `<h1 id="h1">FED20D</h1> <label for="username">Användarnamn:</label>
-                                                    <input id="username" type="text" name="user">
+    document.getElementById("topnav").innerHTML = `<h1 id="h1">FED20D</h1> <nav id="loginform"><label for="username">Användarnamn:</label>
+                                                    <input id="username" type="text" name="user"><br />
 
                                                     <label for="passW">Lösenord:</label>
-                                                    <input id="passW" type="password" name="passW" required>
+                                                    <input id="passW" type="password" name="passW" required> <br />
 
-                                                    <button id="loginBtn" type="submit">Logga in</button>`
+                                                    <button id="loginBtn" type="submit">Logga in</button></>`
     
-                                                    document.getElementById("content").innerHTML = "<h2>Välkommen</h2> <p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
+    document.getElementById("content").innerHTML = "<h2>Hej! &#128075;</h2> <p>Fyll i dina användaruppgifter ovan för att logga in. </p>";
 
 // VALIDERA ANGIVNA INLOGGNINGSUPPGIFTER
     
@@ -45,7 +45,7 @@ function welcomePage() {
 // FELMEDDELANDE VID FELAKTIGT ANGIVNA INLOGGNINGSUPPGIFTER
 
             else {
-                document.getElementById("content").innerHTML = "<h2>Oops!</h2> <p>Nu blev det lite fel. Försök igen! </p>";
+                document.getElementById("content").innerHTML = "<h2>Oops! &#129327;</h2> <p>Nu blev det lite fel. Försök igen! </p>";
             }
         }
     }
@@ -55,8 +55,8 @@ function welcomePage() {
 
 function loggedIn() {
 
-    document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
-    document.getElementById("content").innerHTML = "<h2>Snyggt " + localStorage.getItem('username') + "!</h2> <p>Nu är du inloggad.</p>";
+    document.getElementById("topnav").innerHTML = "<h1 id='h1'>FED20D</h1> <button id='logoutBtn'> Logga ut </button>";
+    document.getElementById("content").innerHTML = "<h2>Snyggt " + localStorage.getItem('username') + "! &#128076;</h2> <p>Nu är du inloggad.</p>";
 
 // LOGGA UT, RENSA LOCAL STORAGE OCH SKICKA TILLBAKA TILL VÄLKOMSTSIDAN
 
