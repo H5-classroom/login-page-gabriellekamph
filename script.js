@@ -6,11 +6,9 @@ let passArr = ["test", "mittlosen"];
 // KOLLA OM BESÖKAREN FINNS I LOCAL STORAGE
 
 if (localStorage.getItem('username') !== null) { 
-    console.log("Användaren finns sparad");
     loggedIn();
 
 } else {
-    console.log("Nope, nix, nej");
     welcomePage();
 }
 
@@ -40,7 +38,6 @@ function welcomePage() {
         for (let i=0; i <userArr.length; i++) {
             if ((username == userArr[i]) && (passW == passArr[i])) {
                 localStorage.setItem("username", userArr[i]);
-                console.log("yay");
                 loggedIn();
                 break;
                 }
@@ -61,16 +58,16 @@ function loggedIn() {
     document.getElementById("topnav").innerHTML = "<button id='logoutBtn'> Logga ut </button>";
     document.getElementById("content").innerHTML = "<h2>Snyggt " + localStorage.getItem('username') + "!</h2> <p>Nu är du inloggad.</p>";
 
+// LOGGA UT, RENSA LOCAL STORAGE OCH SKICKA TILLBAKA TILL VÄLKOMSTSIDAN
+
     document.getElementById("logoutBtn").addEventListener("click", logout);
 
     function logout() {
         localStorage.clear();
-        console.log("Nu är du utloggad");
         welcomePage();
     }
 }
 
-// LOGGA UT, RENSA LOCAL STORAGE OCH SKICKA TILLBAKA TILL VÄLKOMSTSIDAN
 
 
 
