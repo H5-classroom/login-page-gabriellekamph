@@ -17,15 +17,16 @@ if (localStorage.getItem('username') !== null) {
 // VÄLKOMSTSIDA (EJ INLOGGAD)
 
 function welcomePage() {
+    
+    document.getElementById("topnav").innerHTML = `<h1 id="h1">FED20D</h1> <label for="username">Användarnamn:</label>
+                                                    <input id="username" type="text" name="user">
 
-    document.getElementById("topnav").innerHTML = `                    <label for="username">Användarnamn:</label>
-    <input id="username" type="text" name="user">
+                                                    <label for="passW">Lösenord:</label>
+                                                    <input id="passW" type="password" name="passW" required>
 
-    <label for="passW">Lösenord:</label>
-    <input id="passW" type="password" name="passW" required>
-
-    <button id="loginBtn" type="submit">Logga in</button>`
-    document.getElementById("content").innerHTML = "<h2>Välkommen</h2> <p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
+                                                    <button id="loginBtn" type="submit">Logga in</button>`
+    
+                                                    document.getElementById("content").innerHTML = "<h2>Välkommen</h2> <p> Det här är en simpel liten inloggningssida. <br /> Fyll i dina användaruppgifter ovan för att logga in. </p>";
 
 // VALIDERA ANGIVNA INLOGGNINGSUPPGIFTER
     
