@@ -29,22 +29,3 @@ Du har fått i uppgift att utveckla en inloggningssida till ett företag. Sidan 
     3. Välkomstsida för inloggad besökare.
 
 Ditt projekt får enbart innehålla 1 st html sida, index.html alla vyer skall hanteras i denna.
-
-*** Funktionskrav (100p – Minst 60p för G och 80p för VG) ***
-
-----> G KRAV
-
-* Ditt projekt skall validera mot HTML-Validate. (10p)
-* Sidan visar dynamiskt rätt innehåll hela tiden. (10p)
-* Det går att logga in. (10p)
-* Inloggning sparas i localStorage. (10p)
-* Det går att logga ut. (10p)
-
-----> VG KRAV
-
-* Det skall finnas fler användare, dokumentera de andra användarna inför test i readme.md (10p)
-* Välkomstsidan skall dynamiskt visa rätt användarnamn beroende på vem som är inloggad. (10p)
-* Det skall gå att skapa och logga in med en ny användare (Då skall ett nytt formulär för detta visas på innehålls-sidan). (20p)
-* Efter deadline kommer du att tilldelas slumpmässigt två andra lösningar som du skall kodgranska. Läs mer om hur en kodgranskning går till under kapitlet kodgranskning. Båda kodgranskningarna måste vara inlämnade för att få G på uppgiften.
-
-För att uppnå VG på uppgiften skall du lämna in en reflekterande självutvärdering samt nå minst 80p på funktionskraven.
